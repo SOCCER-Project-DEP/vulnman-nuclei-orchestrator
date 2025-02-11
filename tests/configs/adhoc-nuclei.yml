@@ -1,0 +1,30 @@
+templates:
+  - http/exposures/configs/git-config.yaml
+  - http/technologies/nginx/nginx-version.yaml
+
+target:
+  - pentest01.csirt.muni.cz
+  - pentest02.csirt.muni.cz
+  - pentest03.csirt.muni.cz
+  - pentest04.csirt.muni.cz
+  - csirt.muni.cz
+
+# common to all configs
+timestamp: true
+no-color: true
+jsonl: true
+verbose: true
+no-interactsh: true
+disable-redirects: true
+
+# max number of hosts in parallel per template (default 25)
+bulk-size: 25
+
+# max number of templates in parallel (default 25)
+concurrency: 25
+
+# max requests per second (default 10)
+rate-limit: 10
+
+# cycle templates, not hosts
+scan-strategy: template-spray

