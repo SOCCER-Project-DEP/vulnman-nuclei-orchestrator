@@ -104,10 +104,10 @@ poetry run nuclei-scan-runner --skip-scan --logfile /var/log/orchs_nuclei/logs/s
 ## Additional information
 
 - This repository is being developed as a part of the [SOCCER](https://soccer.agh.edu.pl/en/) project.
-- Developed by cybersecurity team of [Masaryk University](https://www.muni.cz/en).
+- Developed by the cybersecurity team of [Masaryk University](https://www.muni.cz/en).
 - This project is a "mirror" of the original repository hosted on university Gitlab. New features and fixes here are being added upon new releases of the original repository.
 
 ## Help
 
 Are you missing something? Do you have any suggestions or problems? Please create an issue.
-Or ask us at `csirt-info@muni.cz`, we are happy to help you, answer your questions or discuss your ideas.
+Or ask us at `csirt-info@muni.cz`; we are happy to help you, answer your questions, or discuss your ideas.
