@@ -110,4 +110,4 @@ poetry run nuclei-scan-runner --skip-scan --logfile /var/log/orchs_nuclei/logs/s
 ## Help
 
 Are you missing something? Do you have any suggestions or problems? Please create an issue.
-Or ask us at `info@csirt.muni.cz`, we are happy to help you, answer your questions or discuss your ideas.
+Or ask us at `csirt-info@muni.cz`, we are happy to help you, answer your questions or discuss your ideas.
