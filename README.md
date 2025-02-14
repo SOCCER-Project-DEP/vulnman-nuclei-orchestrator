@@ -1,4 +1,4 @@
-# Nuclei Scan Runner
+# Vulnerability Management (VulnMan) Nuclei Orchestrator
 
 This project handles the orchestration of scanner nuclei, storing results in the database, and reporting to GitLab.
 
