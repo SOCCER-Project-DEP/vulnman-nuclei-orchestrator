@@ -3,7 +3,7 @@ import logging
 import pathlib
 import random
 import sys
-from datetime import datetime
+from datetime import datetime, timezone
 
 import click
 import pytz
@@ -152,13 +152,12 @@ def cli(
         else find_dotenv(env_file or ".env", usecwd=True)
     )
     load_dotenv(env_path)
-    tz = pytz.timezone("Europe/Prague")
+    timestamp = datetime.now(timezone.utc).isoformat()
+
     results = (
-        results
-        or pathlib.Path(results_dir)
-        .joinpath(f"{datetime.now(tz).isoformat()}.json")
-        .as_posix()
+        results or pathlib.Path(results_dir).joinpath(f"{timestamp}.json").as_posix()
     )
+
 
     if number_of_targets < 1:
         logging.error("Number of targets (--number-of-targets) must be at least 1.")
@@ -191,6 +190,7 @@ def cli(
             assignees=assignees,
             dont_create_issues=dont_create_issues,
             gitlab_host=gitlab_host,
+            timestamp=timestamp,
         )
     except Exception as e:
         logging.exception(f"Error during execution: {e}")
