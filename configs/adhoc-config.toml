@@ -1,4 +1,4 @@
-nuclei-conf = "./configs/adhoc-nuclei.yml"
+vulnman = "./configs/adhoc-nuclei.yml"
 
 logfile =     "/var/log/vulnman_nuclei/logs/adhoc.ndjson"
 results-dir = "/var/log/vulnman_nuclei/results/adhoc/"

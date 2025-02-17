@@ -1,4 +1,4 @@
-nuclei-conf = "./configs/scheduled-nuclei.yml"
+nuclei-config = "./configs/scheduled-nuclei.yml"
 
 logfile =     "/var/log/vulnman_nuclei/logs/scheduled.ndjson"
 results-dir = "/var/log/vulnman_nuclei/results/scheduled/"

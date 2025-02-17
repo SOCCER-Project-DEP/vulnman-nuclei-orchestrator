@@ -1,4 +1,4 @@
-nuclei-conf = "./configs/latest-nuclei.yml"
+nuclei-config = "./configs/latest-nuclei.yml"
 
 logfile =     "/var/log/vulnman_nuclei/logs/latest.ndjson"
 results-dir = "/var/log/vulnman_nuclei/results/latest/"

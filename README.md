@@ -45,10 +45,10 @@ make fix
 
 ```bash
 # To see all available options
-sudo poetry run nuclei-scan-runner --help 
+poetry run nuclei-scan-runner --help 
 
 # Most general run
-sudo poetry run nuclei-scan-runner --config configs/scheduled-config.toml --nuclei-config configs/scheduled-nuclei.yml --dont-create-issues
+poetry run nuclei-scan-runner --config configs/scheduled-config.toml --nuclei-config configs/scheduled-nuclei.yml --dont-create-issues
 ```
 
 ## Ignored finding severity

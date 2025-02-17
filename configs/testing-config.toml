@@ -1,4 +1,4 @@
-nuclei-conf = "./configs/testing-nuclei.yml"
+nuclei-config = "./configs/testing-nuclei.yml"
 
 # logs
 logfile = "/var/log/vulnman_nuclei/logs/testing.ndjson"
