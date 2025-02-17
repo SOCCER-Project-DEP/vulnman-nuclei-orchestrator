@@ -48,7 +48,7 @@ make fix
 poetry run nuclei-scan-runner --help 
 
 # Most general run
-poetry run nuclei-scan-runner --config configs/scheduled-config.toml --nuclei-config configs/scheduled-nuclei.yml --dont-create-issues
+poetry run nuclei-scan-runner --config ./configs/testing-config.toml
 ```
 
 ## Ignored finding severity

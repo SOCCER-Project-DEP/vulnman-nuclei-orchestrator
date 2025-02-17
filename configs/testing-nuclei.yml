@@ -2,12 +2,7 @@ templates:
   - http/exposures/configs/git-config.yaml
   - http/technologies/nginx/nginx-version.yaml
 
-target:
-  - pentest01.csirt.muni.cz
-  - pentest02.csirt.muni.cz
-  - pentest03.csirt.muni.cz
-  - pentest04.csirt.muni.cz
-  - csirt.muni.cz
+target: pentest01.csirt.muni.cz
 
 # common to all configs
 timestamp: true
