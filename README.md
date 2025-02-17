@@ -53,7 +53,7 @@ poetry run nuclei-scan-runner --config configs/scheduled-config.toml --nuclei-co
 
 ## Ignored finding severity
 
-By defaul, severity `info` and `low` are ignored. You can change this behavior by variable in `nuclei_scan_runner/afterscan/script_constants.py`
+By default, severity `info` and `low` are ignored. You can change this behavior by variable in `nuclei_scan_runner/afterscan/script_constants.py`
 
 ## Examples of usage
 
