@@ -2,7 +2,7 @@ templates:
   - http/exposures/configs/git-config.yaml
   - http/technologies/nginx/nginx-version.yaml
 
-target: pentest01.csirt.muni.cz
+target: example.com
 
 # common to all configs
 timestamp: true

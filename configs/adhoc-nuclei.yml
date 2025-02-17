@@ -3,11 +3,7 @@ templates:
   - http/technologies/nginx/nginx-version.yaml
 
 target:
-  - pentest01.csirt.muni.cz
-  - pentest02.csirt.muni.cz
-  - pentest03.csirt.muni.cz
-  - pentest04.csirt.muni.cz
-  - csirt.muni.cz
+  - example.com
 
 # common to all configs
 timestamp: true

@@ -5,10 +5,9 @@ results-dir = "/var/log/vulnman_nuclei/results/scheduled/"
 
 number-of-targets = 50
 
-# https://gitlab.ics.muni.cz/dkb-zh/threats/findings-nuclei
-gitlab-project-id = 6355
+gitlab-project-id = 1234
 
-# Adam Ch. Andrej T.
-assignee = "496,229"
+# User A, User B, User C
+assignee = "1111,2222,3333"
 
 exceptions = ["phpinfo-files", "error-logs", "shell-history", "apache-server-status", "htaccess-config", "cisco-telepresence", "ssh-known-hosts", "ds-store-file", "mikrotik-routeros-api", "mikrotik-ftp-server-detect", "eset-protect-panel", "squirrelmail-login"]

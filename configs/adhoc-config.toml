@@ -16,8 +16,7 @@ dont-mark-targets = true
 # process results == create gitlab issues
 dont-process-results = false
 
-# https://gitlab.ics.muni.cz/dkb-zh/threats/findings-nuclei
-gitlab-project-id = 6355
+gitlab-project-id = 1234
 
 # Adam Ch. Andrej T.
 assignee = "496,229"
