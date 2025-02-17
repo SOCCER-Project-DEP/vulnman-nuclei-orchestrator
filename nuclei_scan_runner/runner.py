@@ -98,6 +98,7 @@ def run(
     assignees: list[str],
     dont_create_issues: bool,
     timestamp: datetime,
+    gitlab_host: str,
 ) -> None:
     if (skip_scan or not dont_query_database) and not os.getenv("DB_CONNECTION_STRING"):
         logging.error("DB_CONNECTION_STRING is not set")
@@ -163,7 +164,7 @@ def run(
         sys.exit(1)
 
     project = (
-        get_project(gl_token, gitlab_project_id) if not dont_create_issues else None
+        get_project(gl_token, gitlab_project_id, gitlab_host) if not dont_create_issues else None
     )
     _, session = prepare_db()
 
