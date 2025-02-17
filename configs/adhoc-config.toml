@@ -1,0 +1,23 @@
+nuclei-conf = "./configs/adhoc-nuclei.yml"
+
+logfile =     "/var/log/vulnman_nuclei/logs/adhoc.ndjson"
+results-dir = "/var/log/vulnman_nuclei/results/adhoc/"
+
+# do it manually
+no-update-templates = true
+no-update-nuclei = true
+
+# ad hoc scan => ad hoc targets in adhoc-nuclei.yml
+dont-query-database = true
+
+# this is not a scheduled scan
+dont-mark-targets = true
+
+# process results == create gitlab issues
+dont-process-results = false
+
+# https://gitlab.ics.muni.cz/dkb-zh/threats/findings-nuclei
+gitlab-project-id = 6355
+
+# Adam Ch. Andrej T.
+assignee = "496,229"

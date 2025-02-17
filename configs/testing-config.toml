@@ -1,0 +1,44 @@
+nuclei-conf = "./configs/testing-nuclei.yml"
+
+# logs
+logfile = "/var/log/vulnman_nuclei/logs/testing.ndjson"
+
+# results
+results = "/var/log/vulnman_nuclei/results/testing/"
+
+# we specified results file directly
+# results-dir = "./"
+
+# don't waste time
+no-update-templates = false
+no-update-nuclei = false
+
+# targets are specified in nuclei configuration
+dont-query-database = true
+
+# usefull to setup scans, but we don't query the datbase
+# so these have no effect
+number-of-targets = 1
+all = false
+
+# we're working on testing database, it's alright
+# but this should be set to true if you're doing
+# an adhoc scan
+dont-mark-targets = false
+
+# process results and report them to GitLab
+dont-process-results = false
+
+# https://gitlab.ics.muni.cz/dkb-zh/threats-testing/-/issues
+gitlab-project-id = 6350
+
+# useful if you just want to process results and report them to GitLab
+skip-scan = false
+
+# use .env.testing instead of .env
+dev = true
+
+assignee = ""
+
+# use the default templates packaged with this tool
+# templates-directory = 

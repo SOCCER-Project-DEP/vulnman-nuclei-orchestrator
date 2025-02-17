@@ -1,0 +1,16 @@
+.env
+.env.testing
+*.ndjson
+dist/
+targets.txt
+error.log
+*_scan.log
+*.log
+scan_failed
+scan_done
+.venv
+__pycache__
+.pytest_cache
+*.swp
+.vscode
+.ruff*
