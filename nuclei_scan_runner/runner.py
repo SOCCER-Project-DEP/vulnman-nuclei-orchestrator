@@ -158,9 +158,9 @@ def run(
         logging.info("Skipping processing of results")
         return
 
-    gl_token = os.getenv("GL-TOKEN")
+    gl_token = os.getenv("GL_TOKEN")
     if not gl_token:
-        logging.error("GL-TOKEN is not set")
+        logging.error("GL_TOKEN is not set")
         sys.exit(1)
 
     project = (
