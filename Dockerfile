@@ -3,6 +3,7 @@ FROM projectdiscovery/nuclei:latest
 WORKDIR /vulnman-nuclei-orchestrator
     
 COPY . .
+RUN nuclei -update-templates
 
 # Install dependencies
 RUN apk --no-cache add curl python3
