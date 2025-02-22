@@ -4,6 +4,7 @@ WORKDIR /vulnman-nuclei-orchestrator
     
 COPY . .
 RUN nuclei -update-templates
+RUN nuclei -update
 
 # Install dependencies
 RUN apk --no-cache add curl python3
