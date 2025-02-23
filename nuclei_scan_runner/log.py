@@ -39,7 +39,7 @@ def setup_logger(path: str, start: str, dev: bool) -> None:
 
     # add json logging stream
     try:
-        json_handler = logging.FileHandler(path, mode="a")
+        json_handler = logging.FileHandler(path, mode="a+")
     except Exception:
         logging.exception(msg="Couldn't open log file.")
         sys.exit(1)
