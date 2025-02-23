@@ -8,7 +8,7 @@ class ScriptConstants:
     MAX_SIZE_GL_TITLE: ClassVar[int] = 255
     TABLE_DOMAINS: ClassVar[str] = "domains"
     ATTRIBUTE_LAST_SCAN_TOOL: ClassVar[str] = "last_scan_nuclei"
-    IGNORED_SEVERITY: ClassVar[list[str]] = ["info", "low"]
+    IGNORED_SEVERITY: ClassVar[list[str]] = [] #["info", "low"]
     REQUIRED_FINDING_ATTRIBUTES: ClassVar[list[str]] = [
         "template",
         "template-url",
