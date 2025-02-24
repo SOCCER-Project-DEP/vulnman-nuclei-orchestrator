@@ -1,10 +1,11 @@
-FROM projectdiscovery/nuclei:latest
+FROM golang:1.24.1-alpine3.21
 
-WORKDIR /vulnman-nuclei-orchestrator
-    
+WORKDIR /vulnman-nuclei-orchestrator    
 COPY . .
-RUN nuclei -update-templates || true
-RUN nuclei -update || true  # bypass github rate limit
+
+# Install Nuclei
+RUN go install -v github.com/projectdiscovery/nuclei/v3/cmd/nuclei@latest
+RUN nuclei -update-templates
 
 # Install dependencies
 RUN apk --no-cache add curl python3

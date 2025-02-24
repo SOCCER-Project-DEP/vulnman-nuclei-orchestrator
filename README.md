@@ -59,8 +59,14 @@ By default, severity `info` and `low` are ignored. You can change this behavior 
 
 ### Process previously scanned results
 
-```
+```bash
 poetry run nuclei-scan-runner --skip-scan --logfile /var/log/vulnman_nuclei/logs/scheduled.ndjson.1 --results /var/log/vulnman_nuclei/results/scheduled/2024-09-12T03\:49\:33.433654.json --gitlab-project-id 6355
+```
+
+### Manual review of findings
+
+```bash
+PGPASSWORD=<PASSWORD> psql -h localhost -U postgres -t -d scan-db -c "select finding from findings" | jq -r | jq '{matched_at: .["matched-at"], name: .info.name}'
 ```
 
 ## Additional information
