@@ -42,6 +42,7 @@ def get_targets(number_of_targets: int, all_targets: bool) -> tuple[str, list[st
         sys.exit(1)
 
     engine = get_database(connection_string)
+    domains = []
 
     with Session(engine) as conn:
         prepare_domains(conn)
