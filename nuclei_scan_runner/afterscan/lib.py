@@ -50,6 +50,9 @@ def prepare_db() -> tuple[Engine, Session]:
 
 
 def get_project(token: str, project_id: str | int, gitlab_host: str) -> object:
+    logging.info(f"Connecting to GitLab project {project_id}")
+    logging.info(f"GitLab host: {gitlab_host}")
+    logging.info(f"GitLab token: {token}")
     gl = gitlab.Gitlab(gitlab_host, token)
     gl.auth()
     return gl.projects.get(project_id)
