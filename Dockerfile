@@ -3,8 +3,8 @@ FROM projectdiscovery/nuclei:latest
 WORKDIR /vulnman-nuclei-orchestrator
     
 COPY . .
-RUN nuclei -update-templates
-RUN nuclei -update
+RUN nuclei -update-templates || true
+RUN nuclei -update || true  # bypass github rate limit
 
 # Install dependencies
 RUN apk --no-cache add curl python3
