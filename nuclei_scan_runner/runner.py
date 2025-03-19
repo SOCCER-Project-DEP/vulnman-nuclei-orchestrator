@@ -8,8 +8,6 @@ from sqlalchemy import func
 from sqlalchemy.orm import Session
 
 from nuclei_scan_runner.afterscan.database.models import Domains, Scanned
-from nuclei_scan_runner.afterscan.finding_processor import FindingProcessor
-from nuclei_scan_runner.afterscan.lib import get_project, prepare_db
 from nuclei_scan_runner.lib import get_database, safely_run
 
 
@@ -91,15 +89,11 @@ def run(
     all_targets: bool,
     dont_mark_targets: bool,
     dont_query_database: bool,
-    dont_process_results: bool,
-    gitlab_project_id: str,
     templates_directory: str,
     skip_scan: bool,
     scan_id: str,
     assignees: list[str],
-    dont_create_issues: bool,
     timestamp: datetime,
-    gitlab_host: str,
 ) -> None:
     if (skip_scan or not dont_query_database) and not os.getenv("DB_CONNECTION_STRING"):
         logging.error("DB_CONNECTION_STRING is not set")
@@ -129,13 +123,10 @@ def run(
     all_targets: {all_targets}
     dont_mark_targets: {dont_mark_targets}
     dont_query_database: {dont_query_database}
-    dont_process_results: {dont_process_results}
-    gitlab_project_id: {gitlab_project_id}
     templates_directory: {templates_directory}
     skip_scan: {skip_scan}
     scan_id: {scan_id}
     assignees: {assignees}
-    dont_create_issues: {dont_create_issues}
     """
 
     if not dont_mark_targets:
@@ -154,27 +145,3 @@ def run(
                     ),
                 )
             conn.commit()
-
-    if dont_process_results:
-        logging.info("Skipping processing of results")
-        return
-
-    gl_token = os.getenv("GL_TOKEN")
-    if not gl_token:
-        logging.error("GL_TOKEN is not set")
-        sys.exit(1)
-
-    project = (
-        get_project(gl_token, gitlab_project_id, gitlab_host) if not dont_create_issues else None
-    )
-    _, session = prepare_db()
-
-    FindingProcessor(
-        file_path=results,
-        session=session,
-        project=project,
-        scan_id=scan_id,
-        assignees=assignees,
-        dont_create_issues=dont_create_issues,
-        templates_directory=templates_directory,
-    ).main()

@@ -1,0 +1,8 @@
+gitlab:
+  username: 'token'
+  base-url: 'https://gitlab.com/'
+  token: 'your-gitlab-token'
+  project-name: 'nuclei-findings'
+  issue-label: 'nuclei-label'
+  severity-as-label: true
+  duplicate-issue-check: false

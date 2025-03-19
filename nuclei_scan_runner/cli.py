@@ -80,13 +80,6 @@ from nuclei_scan_runner import lib, runner
     help="Don't mark targets as scanned in the database.",
 )
 @click.option(
-    "--dont-process-results",
-    is_flag=True,
-    default=False,
-    help="Skip processing scan results.",
-)
-@click.option("--gitlab-project-id", help="GitLab project ID for issue creation.")
-@click.option(
     "--templates-directory",
     default=importlib.resources.files("nuclei_scan_runner") / "vulnerability-templates",
     help="Path to the nuclei templates directory.",
@@ -109,13 +102,6 @@ from nuclei_scan_runner import lib, runner
     help="GitLab user IDs for assigning issues, comma-separated.",
 )
 @click.option("--env-file", help="Path to a custom .env file.")
-@click.option(
-    "--dont-create-issues",
-    is_flag=True,
-    default=False,
-    help="Don't create issues in GitLab.",
-)
-@click.option("--gitlab-host", default="https://gitlab.com", help="GitLab host URL.")
 @lib.check_config_file(arg="config")
 def cli(
     config: str,
@@ -129,15 +115,11 @@ def cli(
     number_of_targets: int,
     all_targets: bool,
     dont_mark_targets: bool,
-    dont_process_results: bool,
-    gitlab_project_id: str,
     templates_directory: str,
     skip_scan: bool,
     dev: bool,
     assignee: str,
     env_file: str,
-    dont_create_issues: bool,
-    gitlab_host: str,
 ) -> None:
     scan_id = f"nuclei:{random.randint(100000, 999999)}"
 
@@ -157,7 +139,6 @@ def cli(
     results = (
         results or pathlib.Path(results_dir).joinpath(f"{timestamp}.json").as_posix()
     )
-
 
     if number_of_targets < 1:
         logging.error("Number of targets (--number-of-targets) must be at least 1.")
@@ -182,14 +163,10 @@ def cli(
             all_targets=all_targets,
             dont_mark_targets=dont_mark_targets,
             dont_query_database=dont_query_database,
-            dont_process_results=dont_process_results,
-            gitlab_project_id=gitlab_project_id,
             templates_directory=templates_directory,
             skip_scan=skip_scan,
             scan_id=scan_id,
             assignees=assignees,
-            dont_create_issues=dont_create_issues,
-            gitlab_host=gitlab_host,
             timestamp=timestamp,
         )
     except Exception as e:

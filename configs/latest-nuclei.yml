@@ -19,3 +19,7 @@ rate-limit: 10
 
 # cycle templates, not hosts
 scan-strategy: template-spray
+
+# Dont report issues already reported
+report-db: report-db
+report-config: reporting_config.yml

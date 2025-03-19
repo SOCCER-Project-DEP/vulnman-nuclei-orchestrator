@@ -9,11 +9,3 @@ all = true
 
 # this is not a scheduled scan
 dont-mark-targets = true
-
-# process results and report them to GitLab
-dont-process-results = false
-
-gitlab-project-id = 1234
-
-# User A, User B, User C
-assignee = "1111,2222,3333"
